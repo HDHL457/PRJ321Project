@@ -11,6 +11,8 @@ package com.entity;
  */
 public class Tree {
 
+  private String name, id;
+  private double price;
     public String getName() {
         return name;
     }
@@ -34,8 +36,8 @@ public class Tree {
     public void setPrice(double price) {
         this.price = price;
     }
-    private String name, id;
-    private double price;
+
+
 
     public Tree() {
     }
@@ -45,5 +47,5 @@ public class Tree {
         this.id = id;
         this.price = price;
     }
-    
+
     }
