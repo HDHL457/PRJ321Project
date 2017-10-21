@@ -48,6 +48,24 @@
                             <p>
                                 <textarea rows="5" cols="40" name="txtNote" form="usrform" placeholder="Ghi Chu"></textarea>
                             </p>
+                            <p for="chk">
+                                <input type="checkbox" id="chk" value="" />
+                                Giao hàng tại địa chỉ khác?
+                            </p>
+                            <div id="dvAdd" style="display: none">
+                                <p>
+                                    <strong>Địa chỉ : </strong>
+                                    <input type="text" name="txtAddress" value="" />
+                                </p>
+                                <p>
+                                    <strong>Quận/Huyện : </strong>
+                                    <input type="text" name="txtAddress1" value="" />
+                                </p>
+                                <p>
+                                    <strong>Thành Phố : </strong>
+                                    <input type="text" name="txtCity" value="" />
+                                </p>
+                            </div>
                         </td>
                     </tr>
                 </table>
@@ -72,5 +90,17 @@
             </div>
             <input type="submit" name="btnSubmit" value="Thanh Toan" />
         </form>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                $("#chk").click(function () {
+                    if ($(this).is(":checked")) {
+                        $("#dvAdd").show();
+                    } else {
+                        $("#dvAdd").hide();
+                    }
+                });
+            });
+        </script>
     </body>
 </html>
