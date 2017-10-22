@@ -5,6 +5,7 @@
  */
 package com.bean;
 
+import com.context.DBContext;
 import com.entity.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -20,21 +21,21 @@ import java.util.List;
 public class Bean {
     
     //contain operations on Products table such as: select/ insert/ delete...
-    public List<Customer> getClassies() throws Exception {
+    public List<Customer> getClassies() throws Exception {  //chỗ này cần sửa
         List<Customer> r = new ArrayList<>();
-        String query = "select top "+num+" * from Class ";
-        Connection conn = new DBContext().getConnection();
-        PreparedStatement ps = conn.prepareStatement(query);
-        ResultSet rs = ps.executeQuery();
-        while (rs.next()) {
-            int id = rs.getInt("ID");
-            String name = rs.getString("Name");
-            Date startedDate = rs.getDate("StartedDate");
-            boolean activated = rs.getInt("Activated") != 0;
-            r.add(new Classies(id, name, startedDate, activated));
-        }
-        rs.close();
-        conn.close();
+//        String query = "select top "+num+" * from Class ";
+//        Connection conn = new DBContext().getConnection();
+//        PreparedStatement ps = conn.prepareStatement(query);
+//        ResultSet rs = ps.executeQuery();
+//        while (rs.next()) {
+//            int id = rs.getInt("ID");
+//            String name = rs.getString("Name");
+//            Date startedDate = rs.getDate("StartedDate");
+//            boolean activated = rs.getInt("Activated") != 0;
+//            r.add(new Classies(id, name, startedDate, activated));
+//        }
+//        rs.close();
+//        conn.close();
         return r;
     }
 }
